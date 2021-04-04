@@ -22,10 +22,17 @@ class TodoList extends Component {
     this.handleStoreChange = this.handleStoreChange.bind(this);
     store.subscribe(this.handleStoreChange);
     this.handleButtonClick = this.handleButtonClick.bind(this);
+    this.handleItemDelete = this.handleItemDelete.bind(this);
   }
   render(){
       return(
-        <TodoListUI />
+        <TodoListUI 
+          inputValue={this.state.inputValue}
+          list={this.state.list}
+          handleInputChange={this.handleInputChange}
+          handleButtonClick={this.handleButtonClick}
+          handleItemDelete={this.handleItemDelete}
+        />
       )
   }
   handleInputChange(e) {
